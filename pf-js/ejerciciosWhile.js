@@ -42,8 +42,11 @@ let bandera = 1;
 while (bandera > 0) {
     if (numSum == 0) {
 
+    } else {
+
     }
     sumaResult + numSum;
+
 }
 
 /**
