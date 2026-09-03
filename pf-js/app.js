@@ -1,1 +1,80 @@
-const numeros = [42, 7, 91, 18, 63, 25, 84, 3, 56, 71, 12, 97, 34, 68, 9, 45, 77, 21, 60, 5, 88, 31, 14, 73, 49, 2, 95, 38, 66, 27, 81, 10, 54, 92, 16, 69, 33, 76, 24, 58, 1, 87, 40, 65, 19, 99, 52, 29, 74, 6, 83, 35, 11, 57, 90, 23, 47, 79, 4, 61, 98, 26, 70, 13, 85, 32, 55, 8, 93, 41, 64, 17, 72, 28, 50, 96, 20, 67, 36, 82, 15, 59, 94, 30, 75, 22, 48, 86, 39, 62, 100, 44, 78, 53, 89, 37, 51, 80, 43, 46, 132, 107, 191, 118, 163, 125, 184, 103, 156, 171, 112, 197, 134, 168, 109, 145, 177, 121, 160, 105, 188, 131, 114, 173, 149, 102, 195, 138, 166, 127, 181, 110, 154, 192, 116, 169, 133, 176, 124, 158, 101, 187, 140, 165, 119, 199, 152, 129, 174, 106, 183, 135, 111, 157, 190, 123, 147, 179, 104, 161, 198, 126, 170, 113, 185, 130, 155, 108, 193, 141, 164, 117, 172, 128, 150, 196, 120, 167, 136, 182, 115, 159, 194, 122, 175, 142, 148, 186, 139, 162, 200, 144, 178, 153, 189, 137, 151, 180, 143, 146];
+/**
+* todo: 1 Objetos en JS (JSON)
+ * Son una estructura de datos, similar diccionarios o mapas
+ * ? Se organiza en pares
+ * ? Llave : valor asociado
+ * ? Es una estructura de datos desordenada
+ * ? Aqui los datos se obtienen mediante su llave
+ * ! No son los mismos objetos que los de Programacion orientada a objetos
+ * ! Las llaves no se pueden repetir
+ * 
+ * * Curiosidades
+ * Esta notacion se volvio el estandar para intercambio de informacion
+ * Entre cliente y servidor en la WEB
+ * JsoN (Javascript object notation)
+ * 
+ * * NOTA:
+ * Todas las funcines retornan undefined si no tienen un return
+* 
+* todo: 2. DOM
+* todo: 3. Manipulación de formularios
+* todo: 4. Eventos
+* todo: 5. Como renderizar cosas en pantalla
+ */
+
+const participante = {
+    name: "Diana",
+    lastName: "García",
+    age: 27,
+    isAlive: true,
+    sayHi: function () {
+        console.log("Hola dice Diana");
+    },
+    ch: 71
+};
+
+/**
+ * * COMO ACCEDR A LOS VALORES
+ * 1. Notacion punto (mas usado)
+ * 2. Notacion corchete, el nombre va entre comillas como si fuere un string
+ */
+
+console.log(`El nombre de la participante es ${participante.name} ${participante.lastName}`);
+console.log(`La edad de la participante es ${participante["age"]}`);
+
+participante.sayHi();
+console.log("NOTA: Todas las funcines retornan undefined si no tienen un return");
+console.log(participante.sayHi());
+
+// Como agregar un nuevo par de llave:valor
+participante.favoriteAnimals = ["perro", "conejo", "gato"];
+console.log(participante);
+
+// Agregar una nueva llav
+participante.direccion = {
+    "calle": "15 de septiembre",
+    "numero": 15,
+    "colonia": "Iztapalapa",
+    "ciudad": "CDMX",
+    "pais": "Mexico"
+};
+
+console.log(participante);
+
+// Como accedemos a la info de los objetos anidados o arrays anidados (objetos o arrays dentro de otro objeto u otro array)
+
+console.log(`El primer animal favorito de ${participante.name} es ${participante.favoriteAnimals[0]}`);
+console.log(`La cuidad de ${participante.name} es ${participante.direccion["ciudad"]}`)
+console.log(`El pais de ${participante.name} es ${participante.direccion.pais}`);
+
+// como modificar el valor de una llave
+participante.age = 25;
+
+// como eliminar una llave
+delete participante.ch;
+console.log(participante);
+
+// como iterar sobre el objeto
+for (const llave in participante) {
+    console.log(`El valor de la llave ${llave} es ${participante[llave]}`);
+}
